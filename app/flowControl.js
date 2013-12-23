@@ -11,6 +11,22 @@ define(function() {
       //
       // otherwise the function should return the number, or false if no number
       // was provided or the value provided is not a number
+      var check = function(a, test) {
+        return a >= test && num % test === 0;
+      };
+      if (typeof num === 'number') {
+        if (check(num, 3) && check(num, 5)) {
+          return 'fizzbuzz';
+        } else if (check(num, 3)) {
+          return 'fizz';
+        } else if (check(num, 5)) {
+          return 'buzz';
+        } else {
+          return num;
+        }
+      } else {
+        return false;
+      }
     }
   };
 });
